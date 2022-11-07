@@ -224,10 +224,10 @@ $variable10 = 150;
 var_dump($variable7 === $variable8 && $variable9 == $variable10);
 var_dump($variable7 > $variable10);*/
 
-$variable10 = 10;
+//$variable10 = 10;
 
-var_dump($variable10);
-var_dump(isset($variable10));
+//var_dump($variable10);
+//var_dump(isset($variable10));
 
 /*define('CATEGORY_SMARTPHONE', 'smartphone');
 define('CATEGORY_WASHING_MACHINE', 'washing_machine');
