@@ -323,3 +323,89 @@ $evenNumbersSum = array_reduce(
 }
 
 var_dump(evenNumbersSum($array));*/
+
+/*$city = 'Vilnius';
+$event = 'PHP conference';
+
+var_dump(compact('city', 'event'));
+
+$array = [
+    'BMW',
+    'Beer',
+    'iPhone'
+];
+
+list($manufacturer, $drink) = $array;
+
+var_dump($manufacturer, $drink);*/
+
+/*var_dump($array);
+
+asort($array);
+
+var_dump($array);
+
+arsort($array);
+
+var_dump($array);*/
+
+//var_dump(range(1, 30));
+
+function getCities(): array
+{
+    return [
+        [
+            'name' => 'Tokyo',
+            'population' => 37435191,
+        ],
+        [
+            'name' => 'Delhi',
+            'population' => 29399141,
+        ],
+        [
+            'name' => 'Shanghai',
+            'population' => 26317104,
+        ],
+        [
+            'name' => 'Sao Paulo',
+            'population' => 21846507,
+        ],
+        [
+            'name' => 'Mexico City',
+            'population' => 21671908,
+        ],
+        [
+            'name' => 'New York',
+            'population' => 25000000,
+        ],
+    ];
+}
+
+/*var_dump(array_column(getCities(), 'population'));
+
+var_dump(array_sum(array_column(getCities(), 'population')));*/
+
+/*function exercise2(array $cities): int
+{
+    return array_sum(array_column($cities, 'population'));
+}
+
+echo exercise2(getCities());*/
+
+function exercise1(array $cities): ?int
+{
+//
+//    Suskaičiuokite bendrą miestų populiaciją pasinaudodami paprastu 'foreach' ir grąžinkite ją iš funkcijos.
+//    Miestus pasiimkite iškvietę funkciją 'getCities'
+//
+
+    $populationSum = 0;
+
+    foreach ($cities as $city) {
+        $populationSum += $city['population'];
+    }
+
+    return $populationSum;
+}
+
+echo exercise1(getCities());
