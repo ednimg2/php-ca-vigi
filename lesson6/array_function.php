@@ -166,7 +166,7 @@ $array3 = [
 var_dump(array_diff($array1, $array2));
 var_dump(array_diff($array1, $array2, $array3));*/
 
-$array1 = [
+/*$array1 = [
     'orange',
     'apple',
     'peach',
@@ -179,6 +179,147 @@ $array2 = [
     'peach',
 ];
 
-var_dump(array_intersect($array1, $array2));
+var_dump(array_intersect($array1, $array2));*/
 
+/*$array1 = [
+    'orange',
+    'apple',
+    'peach',
+    'strawberry',
+];
 
+$array2 = [
+    'strawberry',
+    'pear',
+    'peach',
+];
+
+var_dump(array_merge($array1, $array2));*/
+
+$beers = [
+    [
+        'name' => 'Svyturys',
+        'price' => 1.23
+    ],
+    [
+        'name' => 'Carlsberg',
+        'price' => 1.40
+    ],
+    [
+        'name' => 'Utena',
+        'price' => 1.01
+    ]
+];
+
+/*foreach ($beers as $key => $beer) {
+    $beers[$key]['discount'] = 0;
+}*/
+
+/*$modifiedProducts = array_map(
+    'modifyProduct',
+    $beers
+);
+
+function modifyProduct(array $beer): array
+{
+    $beer['discount'] = 0;
+
+    return $beer;
+}*/
+
+/*$modifiedProducts = array_map(
+    function (array $beer): array {
+        $beer['discount'] = 0;
+
+        if ($beer['price'] > 1.20) {
+            $beer['discount'] = 20;
+        }
+
+        return $beer;
+    },
+    $beers
+);
+
+var_dump($modifiedProducts);*/
+
+$array = [
+    99,
+    15,
+    28,
+    13,
+    145,
+    99,
+    12,
+    -57,
+    -36,
+];
+
+/*$arraySum = array_reduce(
+    $array,
+    function (?int $sum, int $item): int {
+        return $sum + $item;
+    }
+);
+
+var_dump($arraySum);*/
+
+/*$evenNumbers = array_filter(
+    $array,
+    function (int $number): bool {
+        if (!($number % 2)) {
+            return true;
+        }
+
+        return false;
+    }
+);
+
+var_dump($evenNumbers);*/
+
+/*$evenNumbers = array_filter(
+    $array,
+    function (int $number): bool {
+        if (!($number % 2)) {
+            return true;
+        }
+
+        return false;
+    }
+);
+
+$evenNumbersSum = array_reduce(
+    array_filter(
+        $array,
+        function (int $number): bool {
+            if (!($number % 2)) {
+                return true;
+            }
+
+            return false;
+        }
+    ),
+    function (?int $sum, int $item): int {
+        return $sum + $item;
+    }
+);*/
+
+/*function evenNumbersSum(array $numbers): int
+{
+    return array_reduce(
+        array_filter(
+            $numbers,
+            function (int $number): bool {
+                if (!($number % 2)) {
+                    return true;
+                }
+
+                return false;
+            }
+        ),
+        function (?int $sum, int $item): int {
+            return $sum + $item;
+        }
+    );
+}
+
+var_dump(evenNumbersSum($array));*/
