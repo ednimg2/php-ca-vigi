@@ -380,3 +380,76 @@ function exercise4(int $id): array
 
 var_dump(exercise4(2));
 
+function exercise5(): array
+{
+    $transactions = [
+        [
+            'total' => 200,
+            'status' => 'error',
+        ],
+        [
+            'total' => 150,
+            'status' => 'completed',
+        ],
+        [
+            'total' => 120,
+            'status' => 'error',
+        ],
+        [
+            'total' => 100,
+            'status' => 'completed',
+        ],
+        [
+            'total' => 50,
+            'status' => 'error',
+        ],
+    ];
+
+    foreach ($transactions as $key => $transaction) {
+        if ($transaction['status'] === 'error') {
+            unset($transactions[$key]);
+        }
+    }
+
+    return $transactions;
+
+    /*
+    Sunaikinkite visus elementus, kurių 'status' reikšmė yra 'error' ir grąžinkite pamodifikuotą masyvą.
+    Tikėkitės, kad $transactions masyvo narių skaičius gali varijuoti, tad naudokite ciklą.
+    */
+}
+
+var_dump(exercise5());
+
+function exercise6(string $key): ?string
+{
+    $products = [
+        'product_1' => 'shirt',
+        'product_2' => 'trousers',
+        'product_98' => 'coat',
+    ];
+
+    /*foreach ($products as $key2 => $product) {
+        if ($key === $key2) {
+            return $product;
+        }
+    }*/
+
+
+    if (isset($products[$key])) {
+        return $products[$key];
+    }
+
+    return null;
+
+
+//    Funkcija turi grąžinti reikšmę pagal paduotą raktą.
+//    Jeigu paduotas raktas neegzistuoja $products masyve, grąžinkite null.
+//    Pridėkite teisingą return tipą.
+//    Funkcijos kvietimas: exercise4('product_2')
+
+}
+
+var_dump(exercise6('product_1'));
+
+
