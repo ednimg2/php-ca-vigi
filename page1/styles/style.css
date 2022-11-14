@@ -1,0 +1,26 @@
+body {
+    padding: 0px;
+    width: 800px;
+}
+
+h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-title {
+    float: left;
+}
+
+.login-form {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+aside {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
