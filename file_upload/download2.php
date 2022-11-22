@@ -2,8 +2,8 @@
 
 //$filePath = 'storage/www/637cfb2350042_Moduliai.jpg';
 
-if (isset($_GET['path']) && $_GET['path'] !== '') {
-    $filePath = $_GET['path'];
+if (isset($_POST['path']) && $_POST['path'] !== '') {
+    $filePath = $_POST['path'];
 
     if (file_exists($filePath)) {
         $fileName = basename($filePath);
@@ -22,5 +22,5 @@ if (isset($_GET['path']) && $_GET['path'] !== '') {
         die('The provided file path is not valid.');
     }
 } else {
-    die('The query params path is not provided.');
+    die('The file path is not provided.');
 }

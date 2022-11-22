@@ -1,4 +1,6 @@
 <?php
+include 'config.php';
+
 $error = $_FILES['my_file']['error'];
 
 if ($error !== UPLOAD_ERR_OK) {
@@ -6,14 +8,18 @@ if ($error !== UPLOAD_ERR_OK) {
     die();
 }
 
-if (!is_dir('storage/www')) {
-    mkdir('storage/www', 0777);
+if (!is_dir(FILE_STORAGE_PATH)) {
+    mkdir(FILE_STORAGE_PATH, 0777);
 }
 
 $fileName = $_FILES['my_file']['name'];
 $fileTmpPath = $_FILES['my_file']['tmp_name'];
-$fileStoragePath = sprintf('storage/www/%s', sprintf('%s_%s', uniqid(), $fileName));
+$fileStoragePath = sprintf('%s/%s', FILE_STORAGE_PATH, sprintf('%s_%s', uniqid(), $fileName));
 
-move_uploaded_file($fileTmpPath, $fileStoragePath);
+if (move_uploaded_file($fileTmpPath, $fileStoragePath)) {
+    $fileResource = fopen(MY_DB_FILE, 'a');
+    fwrite($fileResource, $fileStoragePath . PHP_EOL);
+    fclose($fileResource);
 
-echo 'File uploaded successfully!';
+    echo 'File uploaded successfully!';
+}
