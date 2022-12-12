@@ -37,3 +37,44 @@ SELECT
 FROM
 	products as P
 INNER JOIN categories as C ON C.id = P.category_id
+
+    use marketplace;
+
+-- sub-select product count (nerekomenduojamas)
+SELECT
+    ORD.id,
+    (SELECT COUNT(id) FROM order_products WHERE order_id = ORD.id) as product_count
+FROM orders as ORD;
+
+-- sub-select product count with table join (rekomentuojamas)
+SELECT
+    ORD.id,
+    COUNT(ORD_P.id) as product_count
+FROM orders as ORD
+         INNER JOIN order_products as ORD_P ON ORD_P.order_id = ORD.id
+GROUP BY ORD.id
+
+
+SELECT AVG(price) FROM products;
+
+
+SELECT
+    *
+FROM products
+WHERE
+        price > (
+        SELECT AVG(price) FROM products
+    );
+
+SELECT
+    id,
+    name,
+    (price + 20) as price,
+    price as olde_price
+FROM products
+WHERE
+        price > (
+        SELECT AVG(price) FROM products
+    )
+HAVING price < 150
+;
