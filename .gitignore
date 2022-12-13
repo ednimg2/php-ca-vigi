@@ -1,1 +1,4 @@
 .idea
+mysql/docker/mysql
+mysql/docker/*
+docker-compose.yml
