@@ -30,6 +30,12 @@ if (isset($_SESSION['error'])) {
             <td>{$row['todo']}</td>
             <td>{$row['due_date']}</td>
             <td>{$row['due_time']}</td>
+            <td>
+                <form action=\"delete.php\" method=\"POST\">
+                    <input type=\"hidden\" name=\"id\" value=\"{$row['id']}\">
+                    <input type=\"submit\" value=\"Delete\">
+                </form>
+            </td>
         </tr>";
     }
 ?>
