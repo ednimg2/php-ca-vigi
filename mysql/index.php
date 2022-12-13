@@ -24,6 +24,8 @@ if (isset($_SESSION['error'])) {
     $query = "SELECT * FROM todo";
     $result = mysqli_query($mysql, $query);
 
+    //$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
     function printTodoRow(array $row): string
     {
         return "<tr>
@@ -51,6 +53,14 @@ if (isset($_SESSION['error'])) {
         } else {
             echo '<tr><td>Nepavyko uzkrauti duomenu</td></tr>';
         }
+
+        /*if ($rows) {
+            foreach ($rows as $row) {
+                echo printTodoRow($row);
+            }
+        } else {
+            echo '<tr><td>Nepavyko uzkrauti duomenu</td></tr>';
+        }*/
     ?>
     </table>
 </fieldset>
