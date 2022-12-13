@@ -1,16 +1,13 @@
 <?php
+session_start();
 
 require_once 'connection.php';
-
 $mysql = connectDb();
 
-$stmt = mysqli_prepare($mysql, "INSERT INTO todo (`todo`, `due_date`, `due_time`) VALUE (?,?,?)");
-$val1 = 'Ismok PHP';
-$val2 = '2022-12-20';
-$val3 = '11:11:11';
+if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+}
 
-mysqli_stmt_bind_param($stmt, 'sss', $val1, $val2, $val3);
-mysqli_stmt_execute($stmt)
 ?>
 
 <form action="create_todo.php" method="POST">
@@ -22,3 +19,32 @@ mysqli_stmt_execute($stmt)
         <input type="submit" value="Send">
     </fieldset>
 </form>
+
+<?php
+    $query = "SELECT * FROM todo";
+    $result = mysqli_query($mysql, $query);
+
+    function printTodoRow(array $row): string
+    {
+        return "<tr>
+            <td>{$row['todo']}</td>
+            <td>{$row['due_date']}</td>
+            <td>{$row['due_time']}</td>
+        </tr>";
+    }
+?>
+
+<fieldset>
+    <legend>ToDo List</legend>
+    <table>
+    <?php
+        if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
+                echo printTodoRow($row);
+            }
+        } else {
+            echo '<tr><td>Nepavyko uzkrauti duomenu</td></tr>';
+        }
+    ?>
+    </table>
+</fieldset>
