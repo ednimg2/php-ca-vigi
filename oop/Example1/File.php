@@ -19,7 +19,7 @@ class File
     public function write(string $text): void
     {
         fwrite($this->handle, $text . PHP_EOL);
-        rewind($this->handle);
+        rewind($this->handle); // rewind file pointer to start reading
     }
 
     public function __destruct()
