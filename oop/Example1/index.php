@@ -1,8 +1,11 @@
 <?php
 
 include_once 'Person.php';
+include_once 'Car.php';
 
-$person1 = new Person();
+$audi = new Car('Audi');
+echo $audi->getManufacturer();
+/*$person1 = new Person();
 $person1->setName('Inga');
 $person1->setAge(20);
 $person1->setEyeColor('blue');
@@ -15,7 +18,7 @@ echo 'Vardas: '. $personData['name'] . '<br>';
 echo 'Akiu spalva: '. $personData['eyeColor'] . '<br>';
 
 echo 'Vardas: '. $person1->getName() . '<br>';
-echo 'Akiu spalva: '. $person1->getEyeColor() . '<br>';
+echo 'Akiu spalva: '. $person1->getEyeColor() . '<br>';*/
 
 //echo $person1->getName();
 
