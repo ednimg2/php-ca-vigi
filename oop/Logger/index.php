@@ -45,7 +45,7 @@ class DatabaseLogger implements LoggerInterface
 
 class CloudLogger implements LoggerInterface
 {
-    public function save()
+    public function save(): string
     {
         return 'Logging to Cloud!';
     }
