@@ -15,6 +15,6 @@ class Square implements ShapeInterface
 
     public function area(): float
     {
-        return $this->width * 2;
+        return $this->width ** 2;
     }
 }
