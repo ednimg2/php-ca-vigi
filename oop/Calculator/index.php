@@ -12,12 +12,12 @@ use App\Calculator\Shape\Rectangle;
 use App\Calculator\Shape\Square;
 use App\Calculator\Shape\Triangle;
 
-$squareArea = new Calculator(new Square(3));
-$rectangleArea = new Calculator(new Rectangle(3, 4));
-$circleArea = new Calculator(new Circle(3));
-$triangleArea = new Calculator(new Triangle(3, 3));
+$square = new Calculator(new Square(3));
+$rectangle = new Calculator(new Rectangle(3, 4));
+$circle = new Calculator(new Circle(3));
+$triangle = new Calculator(new Triangle(3, 3));
 
-var_dump($squareArea->calculateArea());
-var_dump($rectangleArea->calculateArea());
-var_dump($circleArea->calculateArea());
-var_dump($triangleArea->calculateArea());
+var_dump($square->calculateArea());
+var_dump($rectangle->calculateArea());
+var_dump($circle->calculateArea());
+var_dump($triangle->calculateArea());
