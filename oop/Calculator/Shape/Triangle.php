@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AreaCalculator\Shape;
+namespace App\Calculator\Shape;
 
 require_once 'ShapeInterface.php';
 class Triangle implements ShapeInterface
@@ -18,5 +18,10 @@ class Triangle implements ShapeInterface
     public function area(): float
     {
         return self::BASE_TRIANGLE * $this->length * $this->height;
+    }
+
+    public function perimeter(): float
+    {
+        return 0;
     }
 }

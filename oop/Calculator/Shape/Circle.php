@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AreaCalculator\Shape;
+namespace App\Calculator\Shape;
 
 require_once 'Shape/ShapeInterface.php';
 
@@ -17,5 +17,10 @@ class Circle implements ShapeInterface
     public function area(): float
     {
         return self::PI * pow($this->length, 2);
+    }
+
+    public function perimeter(): float
+    {
+        return 0;
     }
 }

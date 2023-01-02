@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AreaCalculator\Shape;
+namespace App\Calculator\Shape;
 
 require_once 'Shape/ShapeInterface.php';
 
@@ -16,5 +16,10 @@ class Square implements ShapeInterface
     public function area(): float
     {
         return $this->width ** 2;
+    }
+
+    public function perimeter(): float
+    {
+        return 4 * $this->width;
     }
 }

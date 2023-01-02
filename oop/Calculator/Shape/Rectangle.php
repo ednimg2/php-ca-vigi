@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AreaCalculator\Shape;
+namespace App\Calculator\Shape;
 
 require_once 'Shape/ShapeInterface.php';
 
@@ -18,5 +18,10 @@ class Rectangle implements ShapeInterface
     public function area(): float
     {
         return $this->width * $this->height;
+    }
+
+    public function perimeter(): float
+    {
+        return 2 * ($this->width + $this->height);
     }
 }
