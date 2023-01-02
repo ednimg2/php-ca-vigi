@@ -21,3 +21,5 @@ var_dump($square->calculateArea());
 var_dump($rectangle->calculateArea());
 var_dump($circle->calculateArea());
 var_dump($triangle->calculateArea());
+
+var_dump($square->calculatePerimeter());
