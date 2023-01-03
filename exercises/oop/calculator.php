@@ -70,5 +70,15 @@
  * $calculator = new Calculator();
  * $calculator->calculateArea(new Rectangle(3, 4));
  *
+ * Susikurti nauja class'e Circle
+ * Methods:
+ * + calculateArea()
+ * + calculateRadius()
+ *
+ * Kodo vykdymas:
+ *
+ * $calculator = new Calculator();
+ * $calculator->calculateArea(new Circle(3));
+ *
  */
 
