@@ -30,3 +30,21 @@
  *
  * $calculator->sum(); // 9
  */
+
+/**
+ * Sukurti class'e Rectangle
+ * Methods:
+ * + calculateArea(int $a, int $b);
+ *
+ * Kodo vykdymas:
+ *
+ * $rectangle = new Rectangle();
+ * $rectangle->calculateArea(3, 4); // 12
+ *
+ * Sukurti class'e Square
+ * Methods:
+ * + calculateArea(int $a);
+ *
+ * $square = new Square();
+ * $square->calculateArea(3); // 12
+ */
