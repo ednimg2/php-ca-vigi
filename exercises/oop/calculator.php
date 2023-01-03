@@ -69,4 +69,15 @@
  *
  * $areaCalculator = new AreaCalculator();
  * $areaCalculator->calculate(new Rectangle(3, 4));
+ *
+ * Sukurkite interface'a AreaCalculatorInterface
+ * Methods:
+ * + calculateArea()
+ *
+ * Sutvarkykite classe's Rectangle ir Square, kad naudotu interface'a AreaCalculatorInterface
+ *
+ * Kodo vykdymas:
+ *
+ * $areaCalculator = new AreaCalculator();
+ * $areaCalculator->calculate(new Rectangle(3, 4));
  */
