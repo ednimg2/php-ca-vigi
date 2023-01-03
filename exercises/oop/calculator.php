@@ -47,9 +47,17 @@
  * + calculateArea(int $a);
  *
  * $square = new Square();
- * $square->calculateArea(3); // 12
+ * $square->calculateArea(3); // 9
  *
  * Sutvarkyti koda taip, kad Rectangle ir Square objektu argumentus galetume perduoti per konstruktoriu ir uznaudoti juos method'e
+ *
+ * Kodo vykdymas:
+ *
+ * $rectangle = new Rectangle(3, 4);
+ * $rectangle->calculateArea(); // 12
+ *
+ * $square = new Square(3);
+ * $square->calculateArea(); // 9
  *
  * Sukurti class'e AreaCalculator
  * Methods:
@@ -57,5 +65,8 @@
  *
  * method'as calculate() turi iskviesti Rectangle arba Square class'iu method'a calculateArea()
  *
- * Sutvarkyti Rectangle ir Square class'es, kad jos veiktu teisingai.
+ * Kodo vykdymas:
+ *
+ * $areaCalculator = new AreaCalculator();
+ * $areaCalculator->calculate(new Rectangle(3, 4));
  */
