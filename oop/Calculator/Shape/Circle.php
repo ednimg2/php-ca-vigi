@@ -2,8 +2,6 @@
 
 namespace App\Calculator\Shape;
 
-require_once 'Shape/ShapeInterface.php';
-
 class Circle implements ShapeInterface
 {
     private const PI = 3.1415926535898;

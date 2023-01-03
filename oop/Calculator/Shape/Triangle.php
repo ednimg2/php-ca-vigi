@@ -2,7 +2,6 @@
 
 namespace App\Calculator\Shape;
 
-require_once 'ShapeInterface.php';
 class Triangle implements ShapeInterface
 {
     private const BASE_TRIANGLE = 0.5;

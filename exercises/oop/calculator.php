@@ -79,6 +79,64 @@
  *
  * $calculator = new Calculator();
  * $calculator->calculateArea(new Circle(3));
+ * $calculator->calculateRadius(new Circle(3));
  *
  */
 
+interface AreaInterface
+{
+    public function calculateArea();
+}
+
+interface DiameterInterface
+{
+    public function calculateDiameter();
+}
+
+
+class Rectangle implements AreaInterface
+{
+    private int $width;
+    private int $height;
+
+    public function __construct(int $width, int $height)
+    {
+        $this->width = $width;
+        $this->height = $height;
+    }
+    public function calculateArea(): int
+    {
+        return $this->width * $this->height;
+    }
+}
+
+class Circle implements AreaInterface, DiameterInterface
+{
+    public function calculateArea()
+    {
+        // TODO: Implement calculateArea() method.
+    }
+
+    public function calculateDiameter()
+    {
+        // TODO: Implement calculateRadius() method.
+    }
+}
+
+class Calculator
+{
+    public function calculateArea(AreaInterface $shape): int
+    {
+        return $shape->calculateArea();
+    }
+
+    public function calculateDiameter(DiameterInterface $shape): float
+    {
+        return $shape->calculateDiameter();
+    }
+}
+
+$calculator = new Calculator();
+var_dump($calculator);
+echo $calculator->calculateArea(new Rectangle(3, 4)) . PHP_EOL;
+echo $calculator->calculateDiameter(new Rectangle(3, 4));

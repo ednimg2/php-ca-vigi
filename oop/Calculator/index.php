@@ -1,10 +1,18 @@
 <?php
 
-require 'Shape/Square.php';
-require 'Shape/Rectangle.php';
-require 'Shape/Circle.php';
-require 'Shape/Triangle.php';
 require 'Calculator.php';
+
+function load_model($class_name)
+{
+    $class_name = str_replace('App\Calculator\\', '', $class_name);
+    $pathToClassFile = __DIR__ . '/' . str_replace('\\', '/', $class_name) . '.php';
+
+    if (file_exists($pathToClassFile)) {
+        require  $pathToClassFile;
+    }
+}
+
+spl_autoload_register('load_model');
 
 use App\Calculator\Calculator;
 use App\Calculator\Shape\Circle;

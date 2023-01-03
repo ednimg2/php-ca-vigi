@@ -2,8 +2,6 @@
 
 namespace App\Calculator\Shape;
 
-require_once 'Shape/ShapeInterface.php';
-
 class Rectangle implements ShapeInterface
 {
     private float $width;
