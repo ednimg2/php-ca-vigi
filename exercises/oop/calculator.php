@@ -32,6 +32,7 @@
  */
 
 /**
+ * Uzduotis Nr. 2
  * Sukurti class'e Rectangle
  * Methods:
  * + calculateArea(int $a, int $b);
