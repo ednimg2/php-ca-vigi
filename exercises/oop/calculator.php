@@ -47,4 +47,14 @@
  *
  * $square = new Square();
  * $square->calculateArea(3); // 12
+ *
+ * Sutvarkyti koda taip, kad Rectangle ir Square objektu argumentus galetume perduoti per konstruktoriu ir uznaudoti juos method'e
+ *
+ * Sukurti class'e AreaCalculator
+ * Methods:
+ * + calculate()
+ *
+ * method'as calculate() turi iskviesti Rectangle arba Square class'iu method'a calculateArea()
+ *
+ * Sutvarkyti Rectangle ir Square class'es, kad jos veiktu teisingai.
  */
