@@ -2,16 +2,8 @@
 
 function load_model($class_name)
 {
-    $pathToClassFile = 'Model/' . $class_name . '.php';
-
-    if (file_exists($pathToClassFile)) {
-        require  $pathToClassFile;
-    }
-}
-
-function load_class($class_name)
-{
-    $pathToClassFile = 'Class/' . $class_name . '.php';
+    $class_name = str_replace('App\\', '', $class_name);
+    $pathToClassFile = __DIR__ . '/' . str_replace('\\', '/', $class_name) . '.php';
 
     if (file_exists($pathToClassFile)) {
         require  $pathToClassFile;
@@ -19,7 +11,8 @@ function load_class($class_name)
 }
 
 spl_autoload_register('load_model');
-spl_autoload_register('load_class');
 
-//$circle = new Circle();
-$square = new Square();
+$circle = new \App\Model\Circle();
+$square = new \App\Model\Square();
+
+$circle2 = new App\Service\Circle();

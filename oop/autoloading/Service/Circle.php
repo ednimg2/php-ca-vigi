@@ -1,10 +1,11 @@
 <?php
-namespace App\Model;
+
+namespace App\Service;
 
 class Circle
 {
     public function __construct()
     {
-        echo 'Circle class';
+        echo 'Circle class service';
     }
 }
