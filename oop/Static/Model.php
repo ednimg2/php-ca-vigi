@@ -6,7 +6,7 @@ class Model
 
     public static function getTableName()
     {
-        return self::$tableName;
+        return static::$tableName;
     }
 }
 
@@ -15,4 +15,5 @@ class User extends Model
     protected static $tableName = 'User';
 }
 
+echo Model::getTableName() . PHP_EOL;
 echo User::getTableName();
