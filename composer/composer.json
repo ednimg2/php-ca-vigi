@@ -10,5 +10,10 @@
             "name": "Mindaugas",
             "email": "mindaugas.g@rrr.lt"
         }
-    ]
+    ],
+    "require": {
+        "cmfcmf/openweathermap-php-api": "^3.3",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "php-http/guzzle6-adapter": "^2.0 || ^1.0"
+    }
 }
