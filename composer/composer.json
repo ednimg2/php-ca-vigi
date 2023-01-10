@@ -2,7 +2,7 @@
     "name": "mindaugas/composer",
     "autoload": {
         "psr-4": {
-            "Mindaugas\\Composer\\": "src/"
+            "App\\Vigi\\": "src/"
         }
     },
     "authors": [
@@ -10,6 +10,5 @@
             "name": "Mindaugas",
             "email": "mindaugas.g@rrr.lt"
         }
-    ],
-    "require": {}
+    ]
 }
