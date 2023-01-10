@@ -13,15 +13,34 @@ class Wheather
 
     public function __construct(string $city, string $language, OpenWeatherMap $weather)
     {
+        $this->city = $city;
+        $this->language = $language;
         $this->weather = $weather;
     }
     public function getTemperature(): string
     {
-        //return $this->weather
+        return $this->getWeather()->temperature;
     }
 
-    private function getWeather()
+    public function getPressure(): string
     {
-        return $this->weather->getWeather($);
+        return $this->getWeather()->pressure;
+    }
+
+    public function getFormattedWeather(): string
+    {
+        return '
+            Temperatura: '. $this->getTemperature() . '<br>
+            Slegis: '. $this->getPressure() .'<br>
+        ';
+    }
+
+    private function getWeather(): OpenWeatherMap\CurrentWeather
+    {
+        return $this->weather->getWeather(
+            $this->city,
+            $this->unit,
+            $this->language
+        );
     }
 }
