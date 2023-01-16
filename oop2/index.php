@@ -14,6 +14,12 @@ interface ShoppingCartInterface
 class ShoppingCart implements ShoppingCartInterface
 {
     protected array $items = [];
+    private Discount $discount;
+
+    public function __construct()
+    {
+        $this->discount = new Discount();
+    }
 
     public function addItem(CartItem $item)
     {
@@ -27,6 +33,11 @@ class ShoppingCart implements ShoppingCartInterface
         }
     }
 
+    public function getItems(): array
+    {
+        return $this->items;
+    }
+
     public function getTotal(): float
     {
         return (new CartCalculator($this->items))->getTotal();
@@ -34,7 +45,7 @@ class ShoppingCart implements ShoppingCartInterface
 
     public function apply(): self
     {
-        $this->items = (new Discount())->apply($this->items);
+        $this->items = $this->discount->apply($this->items);
 
         return $this;
     }
@@ -91,12 +102,11 @@ $cart->addItem(new Item('iPhone', 699));
 $cart->addItem(new Item('Samsung', 499));
 $cart->addItem(new Item('Dell macbook', 1299));
 
-//var_dump($cart);
-
+echo $cart->getTotal() . PHP_EOL;
 $cart->apply();
-
-var_dump($cart);
-
-echo $cart->getTotal();
+echo $cart->getTotal() . PHP_EOL;
 
 //var_dump($cart);
+
+$calculator = new CartCalculator($cart->getItems());
+echo $calculator->getTotal();
