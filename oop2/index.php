@@ -102,9 +102,9 @@ $cart->addItem(new Item('iPhone', 699));
 $cart->addItem(new Item('Samsung', 499));
 $cart->addItem(new Item('Dell macbook', 1299));
 
-echo $cart->getTotal() . PHP_EOL;
-$cart->apply();
-echo $cart->getTotal() . PHP_EOL;
+//echo $cart->getTotal() . PHP_EOL;
+//$cart->apply();
+//echo $cart->getTotal() . PHP_EOL;
 
 //var_dump($cart);
 
